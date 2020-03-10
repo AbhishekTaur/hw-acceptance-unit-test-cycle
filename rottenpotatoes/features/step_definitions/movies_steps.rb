@@ -23,3 +23,9 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |arg1, arg2|
+  puts arg1.is_a?(String)
+   assert page.body =~ '#{arg1} .+ arg2'
+   # express the regexp above with the code you wish you had
+end
